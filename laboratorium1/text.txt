@@ -1,0 +1,26 @@
+1) Kroki sortowanie tabeli:
+
+tabA:   9 7 5 4 2 1 5 3
+	---------------
+krok 1:	7 9 5 4 2 1 5 3
+krok 2:	5 7 9 4 2 1 5 3
+krok 3:	4 5 7 9 2 1 5 3
+krok 4:	2 4 5 7 9 1 5 3
+krok 5:	1 2 4 5 7 9 5 3
+krok 6:	1 2 4 5 5 7 9 3
+krok 7:	1 2 3 4 5 5 7 9
+
+2) Algorytm sortowania InsertSort w Java
+
+	int klucz, j;
+        for(int i = 1; i < tab.length; i++){
+            j = i;
+            klucz = tab[i];
+            while(j>0&& tab[j-1] > klucz) {
+                tab[j] = tab[j-1];
+                j--;
+            }
+            tab[j]=klucz;
+            System.out.println("Krok numer " + i + "\n");
+            pokazTablice(tab);
+        }
